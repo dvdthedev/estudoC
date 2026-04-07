@@ -14,10 +14,33 @@ struct Pessoa {
     struct Endereco moradia;
 };
 
+struct Aluno {
+char nome[50];
+int idade;
+};
+
 int main() {
     setlocale(LC_ALL, "Portuguese");
 
-    struct Pessoa pessoas[2];
+    struct Aluno alunos[4];
+
+    for(int i = 0; i < 4; i++){
+        printf("Insira o nome do aluno: \n");
+        scanf("%s", alunos[i].nome);
+    
+        printf("Insira a idade do aluno: \n");
+        scanf("%i", &alunos[i].idade);
+
+    }
+
+    for(int i = 0; i < 4; i++){
+        if(alunos[i].idade >= 18){
+            printf("Aluno: %s \nIdade: %i \n", alunos[i].nome, alunos[i].idade);
+        }
+    }
+
+
+   /*  struct Pessoa pessoas[2];
     
     strcpy(pessoas[0].nome, "Carlos");
     pessoas[0].idade = 30;
@@ -29,7 +52,7 @@ int main() {
     pessoas[1].idade = 55;
     strcpy(pessoas[1].moradia.rua, "Avenida dos Padeiros");
     strcpy(pessoas[1].moradia.cidade, "Belo Horizonte");
-    pessoas[1].moradia.num = 999; // Atribuição direta para int
+    pessoas[1].moradia.num = 999; // Atribuição direta para int */
 
    
 /*     if(pessoas[0].idade > pessoas[1].idade){
@@ -40,9 +63,9 @@ int main() {
                 pessoas[1].nome, pessoas[0].nome, pessoas[1].idade - pessoas[0].idade);
     }
  */
-    for(int i = 0; i < 2; i++){
+  /*   for(int i = 0; i < 2; i++){
         printf("%s, idade: %i \n Endereço: \n Rua: %s, \n Número: %i, \n Cidade: %s\n", pessoas[i].nome, pessoas[i].idade, pessoas[i].moradia.rua, pessoas[i].moradia.num, pessoas[i].moradia.cidade);
-    }
+    } */
 
 
 /* 
