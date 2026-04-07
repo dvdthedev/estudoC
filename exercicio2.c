@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <locale.h> 
+#include <string.h>
 int main() {
     setlocale(LC_ALL, "Portuguese");
 
@@ -28,7 +29,7 @@ int main() {
         printf("%d \n", numeros[i]);
     } */
 
-
+/* 
     int numeros[10];
     numeros[0] = 1;
     numeros[1] = 2;
@@ -46,9 +47,63 @@ int main() {
         //printf("%d\n", numeros[i]);
         result += numeros[i];
         printf("%d\n", result);
+    } */
+
+/*     double numeros[3];
+
+    printf("Digite o primeiro numero: \n");
+
+
+    scanf(" %lg", &numeros[0]);
+
+    printf("Digite o segundo numero: \n");
+
+
+    scanf(" %lg", &numeros[1]);
+
+    printf("Digite o terceiro numero: \n");
+
+    scanf(" %lg", &numeros[2]);
+
+    printf("%lg , %lg, %lg\n", numeros[0], numeros[1], numeros[2]);
+
+    double min = numeros[0];
+    double max = numeros[0];
+
+    for(int i = 0; i < 3; i++){
+        if(numeros[i] > max){
+            max = numeros[i];
+        }
+        if(numeros[i] < min){
+            min = numeros[i];
+        } 
     }
 
-    
+    printf("O maior número é : %lg\nO menor número é : %lg", max, min);
+     */
+
+  /*   char nome[30];
+
+    printf("Digite seu nome: ");
+
+    int tam = strlen(nome);
+    scanf("%s", nome);
+    for(int i = tam ; i >= 0; i--){
+        printf("%c", nome[i]);
+    } */
+
+    char str1[30];
+    char str2[30];
+
+    printf("Digite uma palavra: ");
+    scanf("%s", str1);
+    printf("Digite outra palavra: ");
+    scanf("%s", str2);
+
+    strncat(str1, str2, 30);
+
+    printf("%s", str1);
+
     return 0;
 
 }
