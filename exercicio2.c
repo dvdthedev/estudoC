@@ -1,8 +1,49 @@
 #include <stdio.h>
 #include <locale.h> 
 #include <string.h>
+
+struct Endereco {
+    char rua[50];
+    int num;
+    char cidade[50]; // Mudado de int para char[]
+};
+
+struct Pessoa {
+    char nome[50];
+    int idade;
+    struct Endereco moradia;
+};
+
 int main() {
     setlocale(LC_ALL, "Portuguese");
+
+    struct Pessoa pessoas[2];
+    
+    strcpy(pessoas[0].nome, "Carlos");
+    pessoas[0].idade = 30;
+    strcpy(pessoas[0].moradia.rua, "Avenida dos Cachorros");
+    strcpy(pessoas[0].moradia.cidade, "São Paulo");
+    pessoas[0].moradia.num = 777; // Atribuição direta para int
+
+    strcpy(pessoas[1].nome, "Deivid");
+    pessoas[1].idade = 55;
+    strcpy(pessoas[1].moradia.rua, "Avenida dos Padeiros");
+    strcpy(pessoas[1].moradia.cidade, "Belo Horizonte");
+    pessoas[1].moradia.num = 999; // Atribuição direta para int
+
+   
+/*     if(pessoas[0].idade > pessoas[1].idade){
+        printf("%s é mais velho do que %s, ele tem %i anos a mais.", 
+                pessoas[0].nome, pessoas[1].nome, pessoas[0].idade - pessoas[1].idade);
+    } else {
+        printf("%s é mais velho do que %s, ele tem %i anos a mais.", 
+                pessoas[1].nome, pessoas[0].nome, pessoas[1].idade - pessoas[0].idade);
+    }
+ */
+    for(int i = 0; i < 2; i++){
+        printf("%s, idade: %i \n Endereço: \n Rua: %s, \n Número: %i, \n Cidade: %s\n", pessoas[i].nome, pessoas[i].idade, pessoas[i].moradia.rua, pessoas[i].moradia.num, pessoas[i].moradia.cidade);
+    }
+
 
 /* 
     // Tipos Básicos em C
@@ -92,8 +133,8 @@ int main() {
         printf("%c", nome[i]);
     } */
 
-    char str1[30];
-    char str2[30];
+/*     char str1[15];
+    char str2[15];
 
     printf("Digite uma palavra: ");
     scanf("%s", str1);
@@ -102,7 +143,9 @@ int main() {
 
     strncat(str1, str2, 30);
 
-    printf("%s", str1);
+    printf("%s", str1); */
+
+
 
     return 0;
 
